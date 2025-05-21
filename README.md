@@ -1,13 +1,13 @@
 # 👨‍💻 Full Stack Developer Portfolio
 
-Bem-vindo ao meu portfólio de projetos como desenvolvedora Full Stack em desenvolvimento!  
+Bem-vindo(a) ao meu portfólio de projetos como desenvolvedora Full Stack em desenvolvimento!  
 Aqui você encontrará uma coleção de aplicações que desenvolvi com foco em **back-end**, **front-end** e **banco de dados**, utilizando tecnologias modernas para resolver problemas do mundo real.
 
 ---
 
 ## 📁 Sobre
 
-Sou estudante de Engenharia da Computação com foco em desenvolvimento de software.  
+Sou Adriely, estudante de Engenharia da Computação com foco em desenvolvimento de software.  
 Tenho conhecimento em **Java, C, HTML, CSS, JavaScript**, e estou me aprofundando em frameworks e stacks como:
 
 - **Back-End:** Node.js, Laravel
