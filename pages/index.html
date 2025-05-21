@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriely Castro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        .fira-code {
+          font-family: 'Fira Code', monospace;
+        }
+      </style>
+</head>
+<body class="font-sans bg-black text-white ">
+    <header>
+        <nav class="flex justify-between items-center w-[92%] mx-auto">
+            <div>
+                <h1 class="">Adriely<br>Castro</h1>
+            </div>
+            <div class="nav-links duration-500 md:static absolute bg-white/15 md:bg-black md:min-h-fit min-h-[45vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[5vw] gap-8">
+                    <li>
+                        <a class="hover:text-gray-300" href="#">About</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-300" href="#">Projects</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-300" href="#">Articles</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-300" href="#">Contacts</a>
+                    </li>
+                    <li class="md:hidden">
+                        <button class="bg-white/15 px-5 py-2 rounded-full hover:bg-white/30 text-sm">Pt/En</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative hidden md:block">
+                <!-- Texto -->
+                <button class="translation md:-right-7 -bottom-3 z-10 relative text-sm font-medium">Pt<br>En</button>
+            
+                <!-- Círculo (decorativo) -->
+                <div class="absolute -top-2 w-[70px] h-[70px] border border-gray-700 rounded-full"></div>
+              </div>
+              <ion-icon onclick="onToggleMenu(this)" name="grid-outline" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+        </nav>
+    </header>
+
+    <div>
+        <div class="fira-code font-medium md:text-[130px] text-[70px] m-12">
+            <!-- Linha 1 -->
+            <div class="flex justify-between items-center">
+                <h1 class="text-left">Full-stack</h1>
+                
+                <!-- Botões agrupados -->
+                <div class="flex items-center gap-4">
+                  <button class="text-[25px] font-light text-black italic bg-white px-24 py-3 rounded-full">Projects</button>
+                  <button class="w-14 h-14 flex items-center justify-center bg-white text-black text-2xl rounded-full">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+          
+            <!-- Linha 2 -->
+            <div class="flex justify-end">
+              <h1>Developer</h1>
+            </div>
+          </div>
+    </div>
+
+    <script>
+        function onToggleMenu(e){
+            const navLinks = document.querySelector('.nav-links')
+            e.name = e.name === 'grid-outline' ? 'close' : 'grid-outline'
+            navLinks.classList.toggle('top-[9%]')
+        }
+    </script>
+
+</body>
+</html>
