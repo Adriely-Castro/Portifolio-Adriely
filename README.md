@@ -38,8 +38,8 @@ Tenho conhecimento em **Java, C, HTML, CSS, JavaScript**, e estou me aprofundand
 Fique à vontade para entrar em contato comigo:
 
 - ✉️ Email: `aadriely_vr@hotmail.com`
-- 💼 LinkedIn: [linkedin.com/in/seu-usuario](www.linkedin.com/in/adriely-castro)
-- 🖥️ GitHub: [github.com/seu-usuario](https://github.com/Adriely-Castro)
+- 💼 LinkedIn: [linkedin.com/in/adriely-castro](www.linkedin.com/in/adriely-castro)
+- 🖥️ GitHub: [github.com/Adriely-Castro](https://github.com/Adriely-Castro)
 
 ---
 
