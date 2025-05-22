@@ -15,16 +15,27 @@
         .fira-code {
           font-family: 'Fira Code', monospace;
         }
-      </style>
+    </style>
+
+   <style>
+        .custom-bg {
+            background-color: #000;
+            background-image: url('../img/background.png'); /* ajuste o caminho conforme necessário */
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* ESSA LINHA fixa o fundo */
+        }
+    </style>
 </head>
-<body class="font-sans bg-black text-white font-thin ">
+<body class="font-sans text-white font-thin custom-bg min-h-screen">
     <header>
         <nav class="flex justify-between items-center w-[92%] mx-auto">
             <div>
                 <h1 class="hidden md:block font-semibold text-[20px]">Adriely<br>Castro</h1>
                 <h1 class="block md:hidden text-[17px]">Adriely.Castro</h1>
             </div>
-            <div class="nav-links duration-500 md:static absolute bg-black/90 md:bg-black md:min-h-fit min-h-[45vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+            <div class="nav-links duration-500 md:static absolute bg-black/90 md:bg-transparent md:min-h-fit min-h-[45vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
                 <ul class="flex md:flex-row flex-col md:items-center md:gap-[5vw] gap-8 md:text-[17px] text-[20px]">
                     <li>
                         <a class="hover:text-gray-300" href="#">About</a>
@@ -45,10 +56,7 @@
             </div>
             <div class="relative hidden md:block">
                 <!-- Texto -->
-                <button class="translation md:-right-7 -bottom-3 z-10 relative text-sm font-medium">Pt<br>En</button>
-            
-                <!-- Círculo (decorativo) -->
-                <div class="absolute -top-2 w-[70px] h-[70px] border border-gray-700 rounded-full"></div>
+                <button class="translation md:-right-7 -bottom-3 z-10 relative text-sm font-medium">Pt<br>En</button>       
             </div>
               <ion-icon onclick="onToggleMenu(this)" name="grid-outline" class="text-3xl cursor-pointer md:hidden"></ion-icon>
         </nav>
@@ -90,6 +98,47 @@
                 <ion-icon name="logo-whatsapp"></ion-icon> WhatsApp
             </a>
       </div>
+
+      <!-- Carrossel -->
+      <div class="w-full flex justify-center items-center py-20 overflow-hidden">
+            <div class="relative w-full max-w-[1200px]">
+            <!-- Carousel Wrapper -->
+                <div id="carousel" class="flex transition-transform duration-500 ease-in-out gap-8 px-4">
+                    <!-- Slide 1 -->
+                    <div class="w-[80%] shrink-0 h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1620157191649-1074824b8dfb');">
+                    <div class="absolute inset-0 bg-black/50 flex flex-col justify-center p-8 rounded-2xl">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">The simplest example is kafka + golang</h2>
+                        <p class="text-sm md:text-base text-gray-300 mb-4">This article presents a simple way to implement a micro-service architecture using Kafka, Golang and Docker.</p>
+                        <button class="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-300 w-max">Read more →</button>
+                    </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="w-[80%] shrink-0 h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1602524202234-796c1facc7d0');">
+                    <div class="absolute inset-0 bg-black/50 flex flex-col justify-center p-8 rounded-2xl">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Microservices in Rust</h2>
+                        <p class="text-sm md:text-base text-gray-300 mb-4">Explore high-performance microservices using Rust and Actix-Web with Docker integration.</p>
+                        <button class="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-300 w-max">Read more →</button>
+                    </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="w-[80%] shrink-0 h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1612832020976-8f2e1aa5a470');">
+                    <div class="absolute inset-0 bg-black/50 flex flex-col justify-center p-8 rounded-2xl">
+                        <h2 class="text-xl md:text-2xl font-bold mb-2">Node + Kafka Example</h2>
+                        <p class="text-sm md:text-base text-gray-300 mb-4">See how Node.js integrates with Kafka for lightweight service orchestration.</p>
+                        <button class="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-300 w-max">Read more →</button>
+                    </div>
+                </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="absolute top-1/2 -left-4 transform -translate-y-1/2 z-10">
+            <button onclick="prev()" class="bg-white text-black rounded-full p-3 hover:bg-gray-200 shadow-lg">←</button>
+          </div>
+          <div class="absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+            <button onclick="next()" class="bg-white text-black rounded-full p-3 hover:bg-gray-200 shadow-lg">→</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!--Menu mobile-->
@@ -101,5 +150,27 @@
         }
     </script>
 
+    <script>
+        const carousel = document.getElementById('carousel');
+        let index = 0;
+
+        function showSlide(i) {
+            const total = carousel.children.length;
+            index = (i + total) % total;
+            const slideWidth = carousel.children[0].offsetWidth + 32; // 32px = gap-8
+            carousel.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        function next() {
+            showSlide(index + 1);
+        }
+
+        function prev() {
+            showSlide(index - 1);
+        }
+
+        window.addEventListener('load', () => showSlide(0));
+        window.addEventListener('resize', () => showSlide(index));
+    </script>
 </body>
 </html>
