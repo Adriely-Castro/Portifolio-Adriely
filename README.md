@@ -8,7 +8,7 @@ Aqui você encontrará uma coleção de aplicações que desenvolvi com foco em 
 ## 📁 Sobre
 
 Sou Adriely, estudante de Engenharia da Computação com foco em desenvolvimento de software.  
-Tenho conhecimento em **Java, C, HTML, CSS, JavaScript**, e estou me aprofundando em frameworks e stacks como:
+Tenho conhecimento em **Java, C, HTML, CSS, JavaScript, Tailwindcss**, e estou me aprofundando em frameworks e stacks como:
 
 - **Back-End:** Node.js, Laravel
 - **Front-End:** Vue.js, React, HTML/CSS  
